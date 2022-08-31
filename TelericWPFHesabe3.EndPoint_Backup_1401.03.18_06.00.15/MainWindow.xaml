@@ -1,0 +1,22 @@
+﻿<Window x:Class="TelericWPFHesabe3.EndPoint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        Title="MainWindow"
+        Height="350"
+        FlowDirection="RightToLeft"
+        Width="525">
+    <Grid>
+        <telerik:RadGridView x:Name="asdad" AutoGenerateColumns="False">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Id}"
+                                            IsReadOnly="True"
+                                            Width="1*"
+                                            Header="Id" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}"
+                                            Width="1*"
+                                            Header="Name" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>

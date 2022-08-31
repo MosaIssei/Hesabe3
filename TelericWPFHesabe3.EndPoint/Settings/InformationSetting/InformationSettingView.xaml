@@ -1,0 +1,144 @@
+﻿<Window x:Class="TelericWPFHesabe3.EndPoint.Settings.InformationSetting.InformationSettingView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelericWPFHesabe3.EndPoint.Settings.InformationSetting"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="تنظیم قروشگاه"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="600"
+        Width="800">
+    
+    <Window.InputBindings>
+        <KeyBinding Key="F2"
+                    Command="{Binding SaveInformationCommand}" />
+    </Window.InputBindings>
+    
+    <telerik:EventToCommandBehavior.EventBindings>
+        <telerik:EventBinding Command="{Binding ClosingWindowCommand}"
+                              EventName="Closing"
+                              PassEventArgsToCommand="True" />
+    </telerik:EventToCommandBehavior.EventBindings>
+
+    <DockPanel Margin="10 20"
+               FlowDirection="RightToLeft">
+
+        <TextBlock DockPanel.Dock="Top"
+                   Text="اطلاعات"
+                   HorizontalAlignment="Center"
+                   Style="{StaticResource Header}" />
+
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Columns="2"
+                     Rows="1">
+
+            <telerik:RadPathButton Content="ذخیره"
+                                   IsDefault="True"
+                                   Command="{Binding SaveInformationCommand}"
+                                   Margin="20 0" />
+
+            <telerik:RadButton Content="خروج"
+                               IsCancel="True"
+                               Command="{Binding CloseWindowCommand}"
+                               Margin="20 0" />
+        </UniformGrid>
+        
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0 10"
+                        Grid.ColumnSpan="2">
+
+                <TextBlock Text="نام فروشگاه :"
+                           FontWeight="Bold" />
+
+                <TextBox Text="{Binding InformationSettingModel.ShopName,UpdateSourceTrigger=PropertyChanged}"
+                         GotFocus="TextBox_GotFocus"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Margin="0 10"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                <TextBlock Text="آدرس :"
+                           FontWeight="Bold" />
+
+                <TextBox Text="{Binding InformationSettingModel.ShopAddress,UpdateSourceTrigger=PropertyChanged}"
+                         GotFocus="TextBox_GotFocus"/>
+            </StackPanel>
+
+            <StackPanel Margin="0 10"
+                        Grid.Row="2"
+                        Grid.Column="0">
+
+                <TextBlock Text="پیش شماره استان :"
+                           FontWeight="Bold" />
+                <TextBox FlowDirection="LeftToRight"
+                         GotFocus="TextBox_GotFocus"
+                         Text="{Binding InformationSettingModel.AreaCode, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <StackPanel Margin="0 10"
+                        Grid.Row="2"
+                        Grid.Column="1">
+
+                <TextBlock Text="شماره تلفن :"
+                           FontWeight="Bold" />
+                <TextBox FlowDirection="LeftToRight"
+                         GotFocus="TextBox_GotFocus"
+                         Text="{Binding InformationSettingModel.Phone, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <StackPanel Margin="0 10"
+                        Grid.Row="3"
+                        Grid.Column="0">
+
+                <TextBlock Text="کد ملی :"
+                           FontWeight="Bold" />
+                
+                <TextBox FlowDirection="LeftToRight"
+                         GotFocus="TextBox_GotFocus"
+                         Text="{Binding InformationSettingModel.NationalCode, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <StackPanel Margin="0 10"
+                        Grid.Row="3"
+                        Grid.Column="1">
+
+                <TextBlock Text="شماره اقتصادی :"
+                           FontWeight="Bold" />
+                <TextBox FlowDirection="LeftToRight"
+                         GotFocus="TextBox_GotFocus"
+                         Text="{Binding InformationSettingModel.EconomicalNumber, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <StackPanel Margin="0 10"
+                        Grid.Row="4"
+                        Grid.Column="0">
+
+                <TextBlock Text="کد پستی :"
+                           FontWeight="Bold" />
+                
+                <TextBox FlowDirection="LeftToRight"
+                         GotFocus="TextBox_GotFocus"
+                         Text="{Binding InformationSettingModel.PostalCode, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+        </Grid>
+
+    </DockPanel>
+</Window>

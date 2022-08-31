@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>TelericWPFHesabe3.EndPoint</RootNamespace>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <StartupObject>TelericWPFHesabe3.EndPoint.App</StartupObject>
+    <AssemblyName>Hesab3</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Dictionary\ButtonsDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\FontsDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\IconsDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\RadButtonsDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\TextBlocksDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary\Windows11ThemeDic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow\MainPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dictionary\TextBoxDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sales\ListOfSales\ListOfSalesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\InformationSetting\InformationSettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="Base\PageViewModelBase.cs" />
+    <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="InjectionCollection.cs" />
+    <Compile Include="LoginView.xaml.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MainWindow\MainPageViewModel.cs" />
+    <Compile Include="MainWindow\MainPageView.xaml.cs" />
+    <Compile Include="MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow\Models\Dto\MainWindowModelDto.cs" />
+    <Compile Include="MainWindow\MainWindowViewModel.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\ListOfSales\ListOfSalesView.xaml.cs" />
+    <Compile Include="Sales\ListOfSales\ListOfSalesViewModel.cs" />
+    <Compile Include="Settings\InformationSetting\InformationSettingView.xaml.cs" />
+    <Compile Include="Settings\InformationSetting\InformationSettingViewModel.cs" />
+    <Compile Include="Settings\InformationSetting\Models\InformationSettingModelDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Vazirmatn-FD-Black.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-Bold.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-ExtraBold.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-ExtraLight.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-Light.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-Medium.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-Regular.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-SemiBold.ttf" />
+    <Resource Include="Fonts\Vazirmatn-FD-Thin.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.Wpf.60.Xaml">
+      <Version>2022.2.621</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

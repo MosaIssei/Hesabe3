@@ -1,0 +1,48 @@
+﻿<Window x:Class="TelericWPFHesabe3.EndPoint.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelericWPFHesabe3.EndPoint"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ورود"
+        Height="250"
+        Width="300">
+    <Grid FlowDirection="RightToLeft">
+        <StackPanel Margin="10">
+            
+
+            <StackPanel Margin="10">
+                <TextBlock Text="نام کاربری" />
+                <TextBox Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}"
+                         TabIndex="1"
+                         x:Name="txtUsername"
+                         GotFocus="TextBox_GotFocus"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock telerik:StyleManager.Theme="Windows11"
+                           Text="کلمه عبور" />
+                <telerik:RadPasswordBox x:Name="passwordbox"
+                                        TabIndex="2"
+                                        GotFocus="TextBox_GotFocus"/>
+            </StackPanel>
+
+            <UniformGrid Columns="2" Rows="1">
+                <telerik:RadButton Content="ورود"
+                                   IsDefault="True"
+                                   TabIndex="3"
+                                   Command="{Binding LoginCommand}"
+                                   CommandParameter="{Binding ElementName=passwordbox}" />
+
+                <telerik:RadButton Content="خروج"
+                                   IsCancel="True"
+                                   TabIndex="4"
+                                   Command="{Binding CloseWindowCommand}" />
+            </UniformGrid>
+
+        </StackPanel>
+    </Grid>
+</Window>

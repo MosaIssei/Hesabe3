@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="TextBlock"
+           BasedOn="{StaticResource TextBlockBaseStyle}">
+        <Setter Property="FontFamily"
+                Value="{DynamicResource Vazirmatn FD}" />
+    </Style>
+
+    <Style TargetType="TextBlock"
+           x:Key="Header"
+           BasedOn="{StaticResource TextBlockBaseStyle}">
+        <Setter Property="FontFamily"
+                Value="{DynamicResource Vazirmatn Vazirmatn FD Black}" />
+        <Setter Property="FontSize"
+                Value="25" />
+        <Setter Property="FontWeight"
+                Value="Black" />
+    </Style>
+
+</ResourceDictionary>
